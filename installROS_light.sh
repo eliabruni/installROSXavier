@@ -10,13 +10,13 @@ sudo apt update
 
 sudo apt install ros-melodic-ros-base -y -q --no-install-recommends
 
-echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
-source ~/.bashrc
+#echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
+#source ~/.bashrc
 
-source /opt/ros/melodic/setup.bash
+#source /opt/ros/melodic/setup.bash
 
-echo "source /opt/ros/melodic/setup.zsh" >> ~/.zshrc
-source ~/.zshrc
+#echo "source /opt/ros/melodic/setup.zsh" >> ~/.zshrc
+#source ~/.zshrc
 
-sudo apt install python-rosinstall python-rosinstall-generator python-wstool build-essential -y -q --no-install-recommend
+#sudo apt install python-rosinstall python-rosinstall-generator python-wstool build-essential -y -q --no-install-recommend
 
