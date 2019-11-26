@@ -80,6 +80,7 @@ fi
 tput setaf 2
 echo "Adding repository and source list"
 tput sgr0
+echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
 sudo apt-add-repository universe
 sudo apt-add-repository multiverse
 sudo apt-add-repository restricted
@@ -103,7 +104,7 @@ tput sgr0
 # Here we loop through any packages passed on the command line
 # Install packages ...
 for package in "${packages[@]}"; do
-  sudo apt-get install $package -y
+  sudo apt-get install $package -y -q --no-install-recommends
 done
 
 # Add Individual Packages here
@@ -119,7 +120,7 @@ done
 tput setaf 2
 echo "Installing rosdep"
 tput sgr0
-sudo apt-get install python-rosdep -y
+sudo apt-get install python-rosdep -y -q --no-install-recommends
 # Certificates are messed up on earlier version Jetson for some reason
 # Do not know if it is an issue with the Xavier, test by commenting out
 # sudo c_rehash /etc/ssl/certs
@@ -137,7 +138,7 @@ source ~/.bashrc
 tput setaf 2
 echo "Installing rosinstall tools"
 tput sgr0
-sudo apt-get install python-rosinstall python-rosinstall-generator python-wstool build-essential -y
+sudo apt-get install python-rosinstall python-rosinstall-generator python-wstool build-essential -y -q --no-install-recommends
 tput setaf 2
 echo "Installation complete!"
 tput sgr0
